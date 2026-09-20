@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg municipal-navbar" aria-label="Navegación principal">
     <div class="container">
-      <a class="navbar-brand" href="/" (click)="cerrarMenu()">
+      <a class="navbar-brand" routerLink="/" (click)="cerrarMenu()">
         <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
         <span>Municipalidad <strong>de Colbún</strong></span>
       </a>
@@ -18,12 +18,12 @@
 
       <div class="navbar-collapse" [class.show]="menuAbierto">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link active" href="/" (click)="cerrarMenu()">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" routerLink="/" (click)="cerrarMenu()">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="/municipalidad" (click)="cerrarMenu()">Municipalidad</a></li>
           <li class="nav-item"><a class="nav-link" href="/servicios" (click)="cerrarMenu()">Servicios y trámites</a></li>
           <li class="nav-item"><a class="nav-link" href="/noticias" (click)="cerrarMenu()">Noticias</a></li>
           <li class="nav-item"><a class="nav-link" href="/turismo" (click)="cerrarMenu()">Turismo y cultura</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contacto" (click)="cerrarMenu()">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
           <li class="nav-item ms-lg-2">
             <a class="btn btn-primary nav-highlight" href="/servicios" (click)="cerrarMenu()">
               <i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites
@@ -89,7 +89,7 @@
             <div class="card-icon"><i class="bi bi-telephone" aria-hidden="true"></i></div>
             <h3>Contacto</h3>
             <p>Encuentra nuestros canales de atención.</p>
-            <a href="/contacto" class="card-link">Contactar <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a routerLink="/contacto" class="card-link">Contactar <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
           </article>
         </div>
       </div>
@@ -191,7 +191,7 @@
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-md-6 col-lg-4">
-        <a class="footer-brand" href="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span> Municipalidad de Colbún</a>
+        <a class="footer-brand" routerLink="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span> Municipalidad de Colbún</a>
         <p class="footer-description">Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
       </div>
       <div class="col-6 col-md-3 col-lg-2">
@@ -211,7 +211,7 @@
       <div class="col-12 col-lg-3">
         <h3>Atención ciudadana</h3>
         <p>Para consultas y orientación, visita próximamente nuestra sección de contacto.</p>
-        <a class="footer-contact" href="/contacto">Ir a contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <a class="footer-contact" routerLink="/contacto">Ir a contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
     <div class="footer-bottom">
