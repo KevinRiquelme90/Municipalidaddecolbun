@@ -13,17 +13,34 @@
         [attr.aria-expanded]="menuAbierto"
         (click)="toggleMenu()"
       >
-        <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true"></i>
+        <i
+          class="bi"
+          [class.bi-list]="!menuAbierto"
+          [class.bi-x-lg]="menuAbierto"
+          aria-hidden="true"
+        ></i>
       </button>
 
       <div class="navbar-collapse" [class.show]="menuAbierto">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link active" routerLink="/" (click)="cerrarMenu()">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/municipalidad" (click)="cerrarMenu()">Municipalidad</a></li>
-          <li class="nav-item"><a class="nav-link" href="/servicios" (click)="cerrarMenu()">Servicios y trámites</a></li>
-          <li class="nav-item"><a class="nav-link" href="/noticias" (click)="cerrarMenu()">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="/turismo" (click)="cerrarMenu()">Turismo y cultura</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/" (click)="cerrarMenu()">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/municipalidad" (click)="cerrarMenu()">Municipalidad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servicios" (click)="cerrarMenu()">Servicios y trámites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/noticias" (click)="cerrarMenu()">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/turismo" (click)="cerrarMenu()">Turismo y cultura</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a>
+          </li>
           <li class="nav-item ms-lg-2">
             <a class="btn btn-primary nav-highlight" href="/servicios" (click)="cerrarMenu()">
               <i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites
@@ -38,14 +55,20 @@
 <main>
   <!-- HERO PRINCIPAL -->
   <section class="hero" aria-labelledby="hero-title">
-    <img class="hero-img" src="assets/images/hero-colbun.svg" alt="Paisaje natural representativo de Colbún" />
+    <img
+      class="hero-img"
+      src="assets/images/hero-colbun.svg"
+      alt="Paisaje natural representativo de Colbún"
+    />
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <span class="eyebrow">Municipalidad de Colbún</span>
       <h1 id="hero-title">Bienvenidos a <span>Colbún</span></h1>
       <p>Información, servicios y actividades para nuestra comunidad.</p>
       <div class="hero-actions d-flex flex-wrap gap-3">
-        <a class="btn btn-primary btn-lg" href="/servicios">Ver trámites <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+        <a class="btn btn-primary btn-lg" href="/servicios"
+          >Ver trámites <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
+        ></a>
         <a class="btn btn-outline-light btn-lg" href="/turismo">Conocer Colbún</a>
       </div>
     </div>
@@ -65,7 +88,9 @@
             <div class="card-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></div>
             <h3>Trámites</h3>
             <p>Encuentra información sobre servicios y trámites municipales.</p>
-            <a href="/servicios" class="card-link">Ver trámites <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a href="/servicios" class="card-link"
+              >Ver trámites <i class="bi bi-arrow-right" aria-hidden="true"></i
+            ></a>
           </article>
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
@@ -73,7 +98,9 @@
             <div class="card-icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
             <h3>Noticias</h3>
             <p>Conoce las principales noticias y actividades de la comuna.</p>
-            <a href="/noticias" class="card-link">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a href="/noticias" class="card-link"
+              >Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i
+            ></a>
           </article>
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
@@ -81,7 +108,9 @@
             <div class="card-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
             <h3>Turismo</h3>
             <p>Descubre los atractivos naturales y culturales de Colbún.</p>
-            <a href="/turismo" class="card-link">Descubrir <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a href="/turismo" class="card-link"
+              >Descubrir <i class="bi bi-arrow-right" aria-hidden="true"></i
+            ></a>
           </article>
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
@@ -89,7 +118,9 @@
             <div class="card-icon"><i class="bi bi-telephone" aria-hidden="true"></i></div>
             <h3>Contacto</h3>
             <p>Encuentra nuestros canales de atención.</p>
-            <a routerLink="/contacto" class="card-link">Contactar <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a routerLink="/contacto" class="card-link"
+              >Contactar <i class="bi bi-arrow-right" aria-hidden="true"></i
+            ></a>
           </article>
         </div>
       </div>
@@ -105,7 +136,9 @@
           <h2 id="news-title">Noticias destacadas</h2>
           <p>Contenido demostrativo para la futura sección de noticias.</p>
         </div>
-        <a href="/noticias" class="text-link">Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <a href="/noticias" class="text-link"
+          >Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i
+        ></a>
       </div>
       <div class="row g-4 mt-2">
         @for (noticia of noticias; track noticia.id) {
@@ -113,10 +146,15 @@
             <article class="news-card">
               <img [src]="noticia.imagen" [alt]="noticia.titulo" />
               <div class="news-body">
-                <div class="news-meta"><span>{{ noticia.categoria }}</span><time>{{ noticia.fecha }}</time></div>
+                <div class="news-meta">
+                  <span>{{ noticia.categoria }}</span
+                  ><time>{{ noticia.fecha }}</time>
+                </div>
                 <h3>{{ noticia.titulo }}</h3>
                 <p>{{ noticia.descripcion }}</p>
-                <a href="/noticias" class="card-link">Leer más <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="/noticias" class="card-link"
+                  >Leer más <i class="bi bi-arrow-right" aria-hidden="true"></i
+                ></a>
               </div>
             </article>
           </div>
@@ -132,15 +170,24 @@
         <div class="col-12 col-lg-6">
           <div class="about-image">
             <img src="assets/images/colbun.svg" alt="Entorno natural de Colbún" />
-            <span class="about-badge"><i class="bi bi-heart-fill me-2" aria-hidden="true"></i> Nuestra comunidad</span>
+            <span class="about-badge"
+              ><i class="bi bi-heart-fill me-2" aria-hidden="true"></i> Nuestra comunidad</span
+            >
           </div>
         </div>
         <div class="col-12 col-lg-6">
           <span class="eyebrow">Nuestra comuna</span>
           <h2 id="about-title">Conoce Colbún</h2>
-          <p class="lead">Un territorio donde la naturaleza, la comunidad y la identidad local se encuentran.</p>
-          <p>Colbún invita a descubrir sus paisajes, sus tradiciones y la calidez de sus comunidades. Esta sección presentará próximamente información turística y cultural de la comuna.</p>
-          <a class="btn btn-primary mt-3" href="/turismo">Descubrir Colbún <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+          <p class="lead">
+            Un territorio donde la naturaleza, la comunidad y la identidad local se encuentran.
+          </p>
+          <p>
+            Colbún invita a descubrir sus paisajes, sus tradiciones y la calidez de sus comunidades.
+            Esta sección presentará próximamente información turística y cultural de la comuna.
+          </p>
+          <a class="btn btn-primary mt-3" href="/turismo"
+            >Descubrir Colbún <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
+          ></a>
         </div>
       </div>
     </div>
@@ -152,13 +199,45 @@
       <div class="section-heading text-center">
         <span class="eyebrow">Para tener en cuenta</span>
         <h2 id="info-title">Información importante</h2>
-        <p>Canales de atención municipal. Información disponible próximamente.</p>
+        <p>Encuentra nuestros principales canales de atención municipal.</p>
       </div>
       <div class="row g-3 mt-2">
-        <div class="col-12 col-sm-6 col-lg-3"><div class="info-item"><i class="bi bi-clock" aria-hidden="true"></i><div><h3>Horarios</h3><p>Información disponible próximamente</p></div></div></div>
-        <div class="col-12 col-sm-6 col-lg-3"><div class="info-item"><i class="bi bi-geo-alt" aria-hidden="true"></i><div><h3>Ubicación</h3><p>Contenido demostrativo</p></div></div></div>
-        <div class="col-12 col-sm-6 col-lg-3"><div class="info-item"><i class="bi bi-telephone" aria-hidden="true"></i><div><h3>Teléfono</h3><p>Información disponible próximamente</p></div></div></div>
-        <div class="col-12 col-sm-6 col-lg-3"><div class="info-item"><i class="bi bi-envelope" aria-hidden="true"></i><div><h3>Correo</h3><p>Información disponible próximamente</p></div></div></div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="info-item">
+            <i class="bi bi-clock" aria-hidden="true"></i>
+            <div>
+              <h3>Horarios</h3>
+              <p>08:00 a 18:00 horas</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="info-item">
+            <i class="bi bi-geo-alt" aria-hidden="true"></i>
+            <div>
+              <h3>Ubicación</h3>
+              <p>Avenida Adolfo Novoa #419, Colbún</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="info-item">
+            <i class="bi bi-telephone" aria-hidden="true"></i>
+            <div>
+              <h3>Mesa central</h3>
+              <p>732 561100</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="info-item">
+            <i class="bi bi-envelope" aria-hidden="true"></i>
+            <div>
+              <h3>Correo</h3>
+              <p>info@municipalidadcolbun.cl</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -170,16 +249,37 @@
         <div>
           <span class="eyebrow">Conectados contigo</span>
           <h2 id="subscribe-title">Mantente informado</h2>
-          <p>Déjanos tu correo para mantenerte informado sobre las novedades y actividades de la comunidad.</p>
+          <p>
+            Déjanos tu correo para mantenerte informado sobre las novedades y actividades de la
+            comunidad.
+          </p>
         </div>
-        <form #subscribeForm="ngForm" class="subscribe-form" (ngSubmit)="registrarCorreo(subscribeForm)" novalidate>
+        <form
+          #subscribeForm="ngForm"
+          class="subscribe-form"
+          (ngSubmit)="registrarCorreo(subscribeForm)"
+          novalidate
+        >
           <label for="correo">Correo electrónico</label>
           <div class="input-group">
-            <input id="correo" name="correo" type="email" class="form-control" [(ngModel)]="correo" required placeholder="tu correo@email.com" [attr.aria-invalid]="!!errorCorreo" />
+            <input
+              id="correo"
+              name="correo"
+              type="email"
+              class="form-control"
+              [(ngModel)]="correo"
+              required
+              placeholder="tu correo@email.com"
+              [attr.aria-invalid]="!!errorCorreo"
+            />
             <button class="btn btn-primary" type="submit">Registrar correo</button>
           </div>
-          @if (errorCorreo) { <p class="form-message error" role="alert">{{ errorCorreo }}</p> }
-          @if (mensajeExito) { <p class="form-message success" role="status">{{ mensajeExito }}</p> }
+          @if (errorCorreo) {
+            <p class="form-message error" role="alert">{{ errorCorreo }}</p>
+          }
+          @if (mensajeExito) {
+            <p class="form-message success" role="status">{{ mensajeExito }}</p>
+          }
         </form>
       </div>
     </div>
@@ -191,8 +291,13 @@
   <div class="container">
     <div class="row g-4">
       <div class="col-12 col-md-6 col-lg-4">
-        <a class="footer-brand" routerLink="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span> Municipalidad de Colbún</a>
-        <p class="footer-description">Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
+        <a class="footer-brand" routerLink="/"
+          ><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+          Municipalidad de Colbún</a
+        >
+        <p class="footer-description">
+          Un espacio digital para acercar la información municipal a nuestra comunidad.
+        </p>
       </div>
       <div class="col-6 col-md-3 col-lg-2">
         <h3>Enlaces rápidos</h3>
@@ -203,15 +308,20 @@
       </div>
       <div class="col-6 col-md-3 col-lg-3">
         <h3>Información</h3>
-        <p><i class="bi bi-clock me-2" aria-hidden="true"></i> Horario: contenido demostrativo</p>
-        <p><i class="bi bi-telephone me-2" aria-hidden="true"></i> Teléfono: próximamente</p>
-        <p><i class="bi bi-envelope me-2" aria-hidden="true"></i> Correo: próximamente</p>
-        <p><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Ubicación: próximamente</p>
+        <p><i class="bi bi-clock me-2" aria-hidden="true"></i> Horario: 08:00 a 18:00 horas</p>
+        <p><i class="bi bi-telephone me-2" aria-hidden="true"></i> Mesa central: 732 561100</p>
+        <p><i class="bi bi-envelope me-2" aria-hidden="true"></i> info@municipalidadcolbun.cl</p>
+        <p><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Avenida Adolfo Novoa #419</p>
       </div>
       <div class="col-12 col-lg-3">
         <h3>Atención ciudadana</h3>
-        <p>Para consultas y orientación, visita próximamente nuestra sección de contacto.</p>
-        <a class="footer-contact" routerLink="/contacto">Ir a contacto <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <p>
+          Para consultas y orientación, visita nuestra sección de contacto o encuéntranos en
+          Facebook como Municipalidad de Colbún.
+        </p>
+        <a class="footer-contact" routerLink="/contacto"
+          >Ir a contacto <i class="bi bi-arrow-right" aria-hidden="true"></i
+        ></a>
       </div>
     </div>
     <div class="footer-bottom">

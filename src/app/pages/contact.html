@@ -5,18 +5,45 @@
         <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
         <span>Municipalidad <strong>de Colbún</strong></span>
       </a>
-      <button class="navbar-toggler" type="button" aria-label="Abrir menú principal" [attr.aria-expanded]="menuAbierto" (click)="toggleMenu()">
-        <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true"></i>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-label="Abrir menú principal"
+        [attr.aria-expanded]="menuAbierto"
+        (click)="toggleMenu()"
+      >
+        <i
+          class="bi"
+          [class.bi-list]="!menuAbierto"
+          [class.bi-x-lg]="menuAbierto"
+          aria-hidden="true"
+        ></i>
       </button>
       <div class="navbar-collapse" [class.show]="menuAbierto">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" routerLink="/" (click)="cerrarMenu()">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/municipalidad" (click)="cerrarMenu()">Municipalidad</a></li>
-          <li class="nav-item"><a class="nav-link" href="/servicios" (click)="cerrarMenu()">Servicios y trámites</a></li>
-          <li class="nav-item"><a class="nav-link" href="/noticias" (click)="cerrarMenu()">Noticias</a></li>
-          <li class="nav-item"><a class="nav-link" href="/turismo" (click)="cerrarMenu()">Turismo y cultura</a></li>
-          <li class="nav-item"><a class="nav-link active" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-primary nav-highlight" href="/servicios" (click)="cerrarMenu()"><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites</a></li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/" (click)="cerrarMenu()">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/municipalidad" (click)="cerrarMenu()">Municipalidad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/servicios" (click)="cerrarMenu()">Servicios y trámites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/noticias" (click)="cerrarMenu()">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/turismo" (click)="cerrarMenu()">Turismo y cultura</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn btn-primary nav-highlight" href="/servicios" (click)="cerrarMenu()"
+              ><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites</a
+            >
+          </li>
         </ul>
       </div>
     </div>
@@ -38,24 +65,82 @@
         <div class="col-12 col-lg-5">
           <span class="eyebrow">Atención ciudadana</span>
           <h2>Hablemos con nuestra comunidad</h2>
-          <p class="intro">Esta información es demostrativa y podrá ser reemplazada posteriormente con los datos oficiales de la Municipalidad de Colbún.</p>
+          <p class="intro">
+            Esta información es demostrativa y podrá ser reemplazada posteriormente con los datos
+            oficiales de la Municipalidad de Colbún.
+          </p>
           <div class="contact-info-list">
-            <article class="contact-info-item"><span class="info-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><div><h3>Ubicación</h3><p>Información disponible próximamente</p></div></article>
-            <article class="contact-info-item"><span class="info-icon"><i class="bi bi-telephone" aria-hidden="true"></i></span><div><h3>Teléfono</h3><p>Información disponible próximamente</p></div></article>
-            <article class="contact-info-item"><span class="info-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span><div><h3>Correo electrónico</h3><p>Información disponible próximamente</p></div></article>
-            <article class="contact-info-item"><span class="info-icon"><i class="bi bi-clock" aria-hidden="true"></i></span><div><h3>Horario de atención</h3><p>Contenido demostrativo</p></div></article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>
+              <div>
+                <h3>Ubicación</h3>
+                <p>Avenida Adolfo Novoa #419<br />Colbún, Región del Maule, Chile</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-telephone" aria-hidden="true"></i></span>
+              <div>
+                <h3>Mesa central</h3>
+                <p>732 561100</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+              <div>
+                <h3>Correo electrónico</h3>
+                <p>info@municipalidadcolbun.cl</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-clock" aria-hidden="true"></i></span>
+              <div>
+                <h3>Horario de atención</h3>
+                <p>08:00 a 18:00 horas</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-facebook" aria-hidden="true"></i></span>
+              <div>
+                <h3>Facebook</h3>
+                <p>Municipalidad de Colbún</p>
+              </div>
+            </article>
           </div>
         </div>
         <div class="col-12 col-lg-7">
           <div class="contact-card">
             <div class="contact-card-heading">
               <h2>Envíanos un mensaje</h2>
-              <p>Completa el formulario. Es una demostración frontend y no envía información a Internet.</p>
+              <p>
+                Completa el formulario. Es una demostración frontend y no envía información a
+                Internet.
+              </p>
             </div>
             <form #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)" novalidate>
               <div class="row g-3">
-                <div class="col-12 col-md-6"><label for="nombre">Nombre completo *</label><input id="nombre" name="nombre" type="text" class="form-control" required ngModel /></div>
-                <div class="col-12 col-md-6"><label for="correo">Correo electrónico *</label><input id="correo" name="correo" type="email" class="form-control" required email ngModel /></div>
+                <div class="col-12 col-md-6">
+                  <label for="nombre">Nombre completo *</label
+                  ><input
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    class="form-control"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="correo">Correo electrónico *</label
+                  ><input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    class="form-control"
+                    required
+                    email
+                    ngModel
+                  />
+                </div>
                 <div class="col-12 col-md-6">
                   <label for="telefono">Teléfono</label>
                   <input
@@ -71,14 +156,44 @@
                     aria-describedby="telefono-ayuda"
                     ngModel
                   />
-                  <small id="telefono-ayuda" class="field-help">Formato: 9 y 8 números más, sin espacios ni símbolos.</small>
+                  <small id="telefono-ayuda" class="field-help"
+                    >Formato: 9 y 8 números más, sin espacios ni símbolos.</small
+                  >
                 </div>
-                <div class="col-12 col-md-6"><label for="asunto">Asunto *</label><input id="asunto" name="asunto" type="text" class="form-control" required ngModel /></div>
-                <div class="col-12"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" class="form-control" rows="5" required ngModel></textarea></div>
+                <div class="col-12 col-md-6">
+                  <label for="asunto">Asunto *</label
+                  ><input
+                    id="asunto"
+                    name="asunto"
+                    type="text"
+                    class="form-control"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="mensaje">Mensaje *</label
+                  ><textarea
+                    id="mensaje"
+                    name="mensaje"
+                    class="form-control"
+                    rows="5"
+                    required
+                    ngModel
+                  ></textarea>
+                </div>
               </div>
-              @if (errorFormulario) { <p class="form-message error" role="alert">{{ errorFormulario }}</p> }
-              @if (mensajeEnviado) { <p class="form-message success" role="status">¡Gracias! Tu mensaje fue registrado correctamente.</p> }
-              <button class="btn btn-primary submit-button" type="submit">Enviar mensaje <i class="bi bi-send ms-2" aria-hidden="true"></i></button>
+              @if (errorFormulario) {
+                <p class="form-message error" role="alert">{{ errorFormulario }}</p>
+              }
+              @if (mensajeEnviado) {
+                <p class="form-message success" role="status">
+                  ¡Gracias! Tu mensaje fue registrado correctamente.
+                </p>
+              }
+              <button class="btn btn-primary submit-button" type="submit">
+                Enviar mensaje <i class="bi bi-send ms-2" aria-hidden="true"></i>
+              </button>
             </form>
           </div>
         </div>
@@ -90,10 +205,18 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-content">
-      <a class="footer-brand" routerLink="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span> Municipalidad de Colbún</a>
+      <a class="footer-brand" routerLink="/"
+        ><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+        Municipalidad de Colbún</a
+      >
       <p>Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
-      <a class="footer-home-link" routerLink="/"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver a la Home</a>
+      <a class="footer-home-link" routerLink="/"
+        ><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver a la Home</a
+      >
     </div>
-    <div class="footer-bottom"><span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span><span>Contenido demostrativo para desarrollo académico.</span></div>
+    <div class="footer-bottom">
+      <span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span
+      ><span>Contenido demostrativo para desarrollo académico.</span>
+    </div>
   </div>
 </footer>
