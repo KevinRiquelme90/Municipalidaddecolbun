@@ -8,16 +8,17 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('should create the home page', () => {
     const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should open and close the mobile menu', () => {
     const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angularucm');
+    const app = fixture.componentInstance;
+    app.toggleMenu();
+    expect(app.menuAbierto).toBe(true);
+    app.toggleMenu();
+    expect(app.menuAbierto).toBe(false);
   });
 });

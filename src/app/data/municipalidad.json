@@ -1,0 +1,28 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Actividad comunitaria",
+      "categoria": "Comunidad",
+      "fecha": "Contenido demostrativo",
+      "descripcion": "Noticia de ejemplo para mostrar la presentación de información municipal.",
+      "imagen": "assets/images/noticia-1.svg"
+    },
+    {
+      "id": 2,
+      "titulo": "Agenda de actividades",
+      "categoria": "Actividades",
+      "fecha": "Contenido demostrativo",
+      "descripcion": "Información de ejemplo para la futura agenda de la comuna.",
+      "imagen": "assets/images/noticia-2.svg"
+    },
+    {
+      "id": 3,
+      "titulo": "Espacios para la comunidad",
+      "categoria": "Municipalidad",
+      "fecha": "Contenido demostrativo",
+      "descripcion": "Contenido de ejemplo para comunicar novedades a vecinos y vecinas.",
+      "imagen": "assets/images/noticia-3.svg"
+    }
+  ]
+}

@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-primary: #176B3A;
+  --color-primary-dark: #0F4025;
+  --color-secondary: #2E8B57;
+  --color-light: #E8F5E9;
+  --color-white: #FFFFFF;
+  --color-background: #F5F7F5;
+  --color-text: #374151;
+  --color-text-light: #6B7280;
+  --color-border: #DDE5DF;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-white); font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+button, a, input { font: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid #9bd3aa; outline-offset: 3px; }
+.btn-primary { --bs-btn-bg: var(--color-primary); --bs-btn-border-color: var(--color-primary); --bs-btn-hover-bg: var(--color-primary-dark); --bs-btn-hover-border-color: var(--color-primary-dark); }
