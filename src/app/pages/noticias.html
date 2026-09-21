@@ -1,0 +1,103 @@
+﻿<header>
+  <nav class="navbar navbar-expand-lg municipal-navbar" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" (click)="cerrarMenu()">
+        <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+        <span>Municipalidad <strong>de Colbún</strong></span>
+      </a>
+      <button class="navbar-toggler" type="button" aria-label="Abrir menú principal" [attr.aria-expanded]="menuAbierto" (click)="toggleMenu()">
+        <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-collapse" [class.show]="menuAbierto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" #rlaInicio="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()" [attr.aria-current]="rlaInicio.isActive ? 'page' : null">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/municipalidad" routerLinkActive="active" #rlaMuni="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaMuni.isActive ? 'page' : null">Municipalidad</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/tramites" routerLinkActive="active" #rlaServicios="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaServicios.isActive ? 'page' : null">Servicios y trámites</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/noticias" routerLinkActive="active" #rlaNoticias="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaNoticias.isActive ? 'page' : null">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/turismo" routerLinkActive="active" #rlaTurismo="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaTurismo.isActive ? 'page' : null">Turismo y cultura</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contacto" routerLinkActive="active" #rlaContacto="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaContacto.isActive ? 'page' : null">Contacto</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary nav-highlight" routerLink="/tramites" (click)="cerrarMenu()"><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="contact-hero" aria-labelledby="noticias-title">
+    <div class="container">
+      <span class="eyebrow">Actualidad</span>
+      <h1 id="noticias-title">Noticias de Colbún</h1>
+      <p>Información destacada sobre la comunidad, actividades y proyectos de la comuna.</p>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <span class="eyebrow">Comunidad</span>
+            <h3>Inauguración de nueva plaza vecinal</h3>
+            <p class="text-muted">18 de septiembre de 2026</p>
+            <p>La comuna celebró la apertura de un nuevo espacio público con áreas verdes, juegos infantiles y mobiliario para reuniones vecinales.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <span class="eyebrow">Cultura</span>
+            <h3>Festival de música y artes locales</h3>
+            <p class="text-muted">11 de septiembre de 2026</p>
+            <p>La temporada cultural tuvo una fuerte presencia de artistas regionales, música en vivo y propuestas para familias.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <span class="eyebrow">Salud</span>
+            <h3>Jornada de prevención y bienestar</h3>
+            <p class="text-muted">3 de septiembre de 2026</p>
+            <p>Vecinos participaron en actividades de salud preventiva, entrega de información y atención gratuita en distintos puntos de la comuna.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <span class="eyebrow">Agricultura</span>
+            <h3>Ruta de la fruta de Colbún fortalece la economía local</h3>
+            <p class="text-muted">26 de agosto de 2026</p>
+            <p>Productores locales abrieron sus huertos y espacios de venta para destacar la calidad de la fruta y el trabajo familiar comunal.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <span class="eyebrow">Educación</span>
+            <h3>Actividades escolares en espacios públicos</h3>
+            <p class="text-muted">15 de agosto de 2026</p>
+            <p>Escuelas y organizaciones de la comuna realizaron talleres, exposiciones y actividades artísticas para reforzar la participación estudiantil.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <span class="eyebrow">Turismo</span>
+            <h3>Se impulsa la visita a miradores y senderos del sector</h3>
+            <p class="text-muted">6 de agosto de 2026</p>
+            <p>Se proyecta una mayor promoción de rutas de trekking, miradores y experiencias turísticas vinculadas al patrimonio natural de Colbún.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <a class="footer-brand" routerLink="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>Municipalidad de Colbún</a>
+      <p>Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
+      <a class="footer-home-link" routerLink="/"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver a la Home</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span>
+      <span>Contenido demostrativo para desarrollo académico.</span>
+    </div>
+  </div>
+</footer>

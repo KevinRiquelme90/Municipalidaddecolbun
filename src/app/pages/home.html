@@ -27,22 +27,22 @@
             <a class="nav-link active" routerLink="/" (click)="cerrarMenu()">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/municipalidad" (click)="cerrarMenu()">Municipalidad</a>
+            <a class="nav-link" routerLink="/municipalidad" (click)="cerrarMenu()">Municipalidad</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/servicios" (click)="cerrarMenu()">Servicios y trámites</a>
+            <a class="nav-link" routerLink="/tramites" (click)="cerrarMenu()">Servicios y trámites</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/noticias" (click)="cerrarMenu()">Noticias</a>
+            <a class="nav-link" routerLink="/noticias" (click)="cerrarMenu()">Noticias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/turismo" (click)="cerrarMenu()">Turismo y cultura</a>
+            <a class="nav-link" routerLink="/turismo" (click)="cerrarMenu()">Turismo y cultura</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a>
           </li>
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-primary nav-highlight" href="/servicios" (click)="cerrarMenu()">
+            <a class="btn btn-primary nav-highlight" routerLink="/tramites" (click)="cerrarMenu()">
               <i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites
             </a>
           </li>
@@ -66,10 +66,10 @@
       <h1 id="hero-title">Bienvenidos a <span>Colbún</span></h1>
       <p>Información, servicios y actividades para nuestra comunidad.</p>
       <div class="hero-actions d-flex flex-wrap gap-3">
-        <a class="btn btn-primary btn-lg" href="/servicios"
+        <a class="btn btn-primary btn-lg" routerLink="/tramites"
           >Ver trámites <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
         ></a>
-        <a class="btn btn-outline-light btn-lg" href="/turismo">Conocer Colbún</a>
+        <a class="btn btn-outline-light btn-lg" routerLink="/turismo">Conocer Colbún</a>
       </div>
     </div>
   </section>
@@ -88,7 +88,7 @@
             <div class="card-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></div>
             <h3>Trámites</h3>
             <p>Encuentra información sobre servicios y trámites municipales.</p>
-            <a href="/servicios" class="card-link"
+            <a routerLink="/tramites" class="card-link"
               >Ver trámites <i class="bi bi-arrow-right" aria-hidden="true"></i
             ></a>
           </article>
@@ -98,7 +98,7 @@
             <div class="card-icon"><i class="bi bi-newspaper" aria-hidden="true"></i></div>
             <h3>Noticias</h3>
             <p>Conoce las principales noticias y actividades de la comuna.</p>
-            <a href="/noticias" class="card-link"
+            <a routerLink="/noticias" class="card-link"
               >Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i
             ></a>
           </article>
@@ -136,7 +136,7 @@
           <h2 id="news-title">Noticias destacadas</h2>
           <p>Contenido demostrativo para la futura sección de noticias.</p>
         </div>
-        <a href="/noticias" class="text-link"
+        <a routerLink="/noticias" class="text-link"
           >Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i
         ></a>
       </div>
@@ -152,7 +152,7 @@
                 </div>
                 <h3>{{ noticia.titulo }}</h3>
                 <p>{{ noticia.descripcion }}</p>
-                <a href="/noticias" class="card-link"
+                <a routerLink="/noticias" class="card-link"
                   >Leer más <i class="bi bi-arrow-right" aria-hidden="true"></i
                 ></a>
               </div>
@@ -185,7 +185,7 @@
             Colbún invita a descubrir sus paisajes, sus tradiciones y la calidez de sus comunidades.
             Esta sección presentará próximamente información turística y cultural de la comuna.
           </p>
-          <a class="btn btn-primary mt-3" href="/turismo"
+          <a class="btn btn-primary mt-3" routerLink="/turismo"
             >Descubrir Colbún <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
           ></a>
         </div>
@@ -234,7 +234,7 @@
             <i class="bi bi-envelope" aria-hidden="true"></i>
             <div>
               <h3>Correo</h3>
-              <p>info@municipalidadcolbun.cl</p>
+              <p><a href="mailto:info@municipalidadcolbun.cl">info&#64;municipalidadcolbun.cl</a></p>
             </div>
           </div>
         </div>
@@ -301,16 +301,16 @@
       </div>
       <div class="col-6 col-md-3 col-lg-2">
         <h3>Enlaces rápidos</h3>
-        <a href="/municipalidad">Municipalidad</a>
-        <a href="/servicios">Servicios y trámites</a>
-        <a href="/noticias">Noticias</a>
-        <a href="/turismo">Turismo y cultura</a>
+        <a routerLink="/municipalidad">Municipalidad</a>
+        <a routerLink="/tramites">Servicios y trámites</a>
+        <a routerLink="/noticias">Noticias</a>
+        <a routerLink="/turismo">Turismo y cultura</a>
       </div>
       <div class="col-6 col-md-3 col-lg-3">
         <h3>Información</h3>
         <p><i class="bi bi-clock me-2" aria-hidden="true"></i> Horario: 08:00 a 18:00 horas</p>
         <p><i class="bi bi-telephone me-2" aria-hidden="true"></i> Mesa central: 732 561100</p>
-        <p><i class="bi bi-envelope me-2" aria-hidden="true"></i> info@municipalidadcolbun.cl</p>
+        <p><i class="bi bi-envelope me-2" aria-hidden="true"></i> <a href="mailto:info@municipalidadcolbun.cl">info&#64;municipalidadcolbun.cl</a></p>
         <p><i class="bi bi-geo-alt me-2" aria-hidden="true"></i> Avenida Adolfo Novoa #419</p>
       </div>
       <div class="col-12 col-lg-3">

@@ -1,0 +1,200 @@
+﻿<header>
+  <nav class="navbar navbar-expand-lg municipal-navbar" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" (click)="cerrarMenu()">
+        <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+        <span>Municipalidad <strong>de Colbún</strong></span>
+      </a>
+      <button class="navbar-toggler" type="button" aria-label="Abrir menú principal" [attr.aria-expanded]="menuAbierto" (click)="toggleMenu()">
+        <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-collapse" [class.show]="menuAbierto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" #rlaInicio="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()" [attr.aria-current]="rlaInicio.isActive ? 'page' : null">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/municipalidad" routerLinkActive="active" #rlaMuni="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaMuni.isActive ? 'page' : null">Municipalidad</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/tramites" routerLinkActive="active" #rlaServicios="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaServicios.isActive ? 'page' : null">Servicios y trámites</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/noticias" routerLinkActive="active" #rlaNoticias="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaNoticias.isActive ? 'page' : null">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/turismo" routerLinkActive="active" #rlaTurismo="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaTurismo.isActive ? 'page' : null">Turismo y cultura</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contacto" routerLinkActive="active" #rlaContacto="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaContacto.isActive ? 'page' : null">Contacto</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary nav-highlight" routerLink="/tramites" (click)="cerrarMenu()"><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="contact-hero" aria-labelledby="municipalidad-title">
+    <div class="container">
+      <span class="eyebrow">Municipalidad</span>
+      <h1 id="municipalidad-title">Municipalidad de Colbún</h1>
+      <p>Una administración cercana a la comunidad, enfocada en servicios, desarrollo y calidad de vida.</p>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-lg-7">
+          <span class="eyebrow">Nuestra comuna</span>
+          <h2>Colbún, un territorio con historia y vocación de futuro</h2>
+          <p class="intro">
+            Colbún es una comuna del sur de la Región del Maule, reconocida por su entorno natural,
+            su vinculación con la agricultura y su desarrollo comunitario. La Municipalidad trabaja
+            para fortalecer la convivencia, la atención ciudadana y el bienestar de sus vecinos.
+          </p>
+          <div class="row g-3 mt-1">
+            <div class="col-12 col-md-4">
+              <div class="contact-info-item h-100">
+                <span class="info-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Ubicación</h3>
+                  <p>Región del Maule</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="contact-info-item h-100">
+                <span class="info-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Comunidad</h3>
+                  <p>Vecinos y familias</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="contact-info-item h-100">
+                <span class="info-icon"><i class="bi bi-tree" aria-hidden="true"></i></span>
+                <div>
+                  <h3>Entorno</h3>
+                  <p>Naturaleza y patrimonio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="contact-card">
+            <div class="contact-card-heading">
+              <h2>Datos relevantes</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Área de gestión:</strong> atención ciudadana, servicios, desarrollo local.</li>
+              <li class="list-group-item"><strong>Principales ejes:</strong> salud, educación, infraestructura y cultura.</li>
+              <li class="list-group-item"><strong>Compromiso:</strong> fortalecer la conectividad con la comunidad.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-content section-space" aria-labelledby="organigrama-title">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="eyebrow">Organización</span>
+        <h2 id="organigrama-title">Organigrama municipal</h2>
+        <p>Funciones y áreas clave que apoyan la gestión comunal.</p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-person-badge" aria-hidden="true"></i></span>
+            <div>
+              <h3>Alcaldía</h3>
+              <p>Dirección política y coordinación institucional de la comuna.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-bank" aria-hidden="true"></i></span>
+            <div>
+              <h3>Secretaría Municipal</h3>
+              <p>Apoyo administrativo, normativa y coordinación de la gestión municipal.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-cash-coin" aria-hidden="true"></i></span>
+            <div>
+              <h3>Administración y Finanzas</h3>
+              <p>Control presupuestario, recursos y procesos internos del municipio.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
+            <div>
+              <h3>Obras y Servicios</h3>
+              <p>Infraestructura, mantención urbana y servicios básicos de la comuna.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-heart-pulse" aria-hidden="true"></i></span>
+            <div>
+              <h3>Desarrollo Social</h3>
+              <p>Atención a la comunidad, programas sociales y bienestar colectivo.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-camera-reels" aria-hidden="true"></i></span>
+            <div>
+              <h3>Turismo y Cultura</h3>
+              <p>Promoción del patrimonio, eventos y actividades culturales de la comuna.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="interes-title">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="eyebrow">Información útil</span>
+        <h2 id="interes-title">Información relevante para la comunidad</h2>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <h3>Educación y participación</h3>
+            <p>La Municipalidad impulsa la participación vecinal, la educación y la organización de actividades comunitarias.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <h3>Desarrollo local</h3>
+            <p>Se promueven proyectos de innovación, emprendedurismo y vinculación con productores y organizaciones locales.</p>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-card h-100">
+            <h3>Patrimonio y entorno</h3>
+            <p>Colbún valoriza su identidad, sus paisajes y sus espacios públicos para fortalecer la calidad de vida.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <a class="footer-brand" routerLink="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>Municipalidad de Colbún</a>
+      <p>Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
+      <a class="footer-home-link" routerLink="/"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver a la Home</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span>
+      <span>Contenido demostrativo para desarrollo académico.</span>
+    </div>
+  </div>
+</footer>

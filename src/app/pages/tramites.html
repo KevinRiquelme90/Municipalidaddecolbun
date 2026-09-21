@@ -1,0 +1,167 @@
+﻿<header>
+  <nav class="navbar navbar-expand-lg municipal-navbar" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" (click)="cerrarMenu()">
+        <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+        <span>Municipalidad <strong>de Colbún</strong></span>
+      </a>
+      <button class="navbar-toggler" type="button" aria-label="Abrir menú principal" [attr.aria-expanded]="menuAbierto" (click)="toggleMenu()">
+        <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-collapse" [class.show]="menuAbierto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" #rlaInicio="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()" [attr.aria-current]="rlaInicio.isActive ? 'page' : null">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/municipalidad" routerLinkActive="active" #rlaMuni="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaMuni.isActive ? 'page' : null">Municipalidad</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/tramites" routerLinkActive="active" #rlaServicios="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaServicios.isActive ? 'page' : null">Servicios y trámites</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/noticias" routerLinkActive="active" #rlaNoticias="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaNoticias.isActive ? 'page' : null">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/turismo" routerLinkActive="active" #rlaTurismo="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaTurismo.isActive ? 'page' : null">Turismo y cultura</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contacto" routerLinkActive="active" #rlaContacto="routerLinkActive" (click)="cerrarMenu()" [attr.aria-current]="rlaContacto.isActive ? 'page' : null">Contacto</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary nav-highlight" routerLink="/tramites" (click)="cerrarMenu()"><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="contact-hero" aria-labelledby="tramites-title">
+    <div class="container">
+      <span class="eyebrow">Trámites y servicios</span>
+      <h1 id="tramites-title">Trámites municipales en línea</h1>
+      <p>Consulta y realiza los principales procedimientos de la comuna desde una sola plataforma.</p>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="tramites-listado">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="eyebrow">Servicios disponibles</span>
+        <h2 id="tramites-listado">Procedimientos para vecinos y emprendedores</h2>
+        <p>Se presentan servicios y trámites frecuentes para facilitar la gestión administrativa.</p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+            <div>
+              <h3>Certificado de domicilio</h3>
+              <p>Solicitud de documentos básicos para acreditar residencia y procedimientos personales.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
+            <div>
+              <h3>Permisos de edificación</h3>
+              <p>Consulta y preparación de requisitos para obras menores y permisos municipales.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-card-checklist" aria-hidden="true"></i></span>
+            <div>
+              <h3>Patentes y permisos comerciales</h3>
+              <p>Información para establecimientos, actividades económicas y trámites de apertura.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+            <div>
+              <h3>Subsidios y apoyo social</h3>
+              <p>Consulta de programas de apoyo dirigidos a familias, comunidades y personas en situación vulnerable.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-calendar-event" aria-hidden="true"></i></span>
+            <div>
+              <h3>Autorización de eventos</h3>
+              <p>Requisitos para actividades de barrio, ferias, reuniones comunitarias y eventos públicos.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-info-circle" aria-hidden="true"></i></span>
+            <div>
+              <h3>Consultas ciudadanas</h3>
+              <p>Información, orientación y coordinación con atención ciudadana para dudas de carácter municipal.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-content section-space">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+        <div class="col-12 col-lg-5">
+          <span class="eyebrow">Atención</span>
+          <h2>Cómo gestionar tus trámites</h2>
+          <p class="intro">
+            La Municipalidad de Colbún ofrece un canal de orientación para que vecinos y organizaciones puedan
+            solicitar información, identificar requisitos y canalizar sus necesidades de manera eficiente.</p>
+          <div class="contact-info-list">
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-1-circle" aria-hidden="true"></i></span>
+              <div>
+                <h3>1. Revisa el trámite</h3>
+                <p>Identifica la solicitud o servicio necesario para tu caso.</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-2-circle" aria-hidden="true"></i></span>
+              <div>
+                <h3>2. Reúne documentación</h3>
+                <p>Consulta los requisitos y adjunta la información necesaria.</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-3-circle" aria-hidden="true"></i></span>
+              <div>
+                <h3>3. Contacta a la municipalidad</h3>
+                <p>Solicita orientación o entrega la documentación a través del canal disponible.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="contact-card">
+            <div class="contact-card-heading">
+              <h2>Requisitos básicos para atención</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Identificación del solicitante.</li>
+              <li class="list-group-item">Documentación asociada al trámite o servicio requerido.</li>
+              <li class="list-group-item">Información clara sobre la solicitud, su objetivo y lugar de residencia.</li>
+              <li class="list-group-item">Contacto para respuestas y coordinación posterior.</li>
+            </ul>
+            <div class="mt-4">
+              <a class="btn btn-primary" routerLink="/contacto">Solicitar información <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <a class="footer-brand" routerLink="/"><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>Municipalidad de Colbún</a>
+      <p>Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
+      <a class="footer-home-link" routerLink="/"><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver a la Home</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span>
+      <span>Contenido demostrativo para desarrollo académico.</span>
+    </div>
+  </div>
+</footer>

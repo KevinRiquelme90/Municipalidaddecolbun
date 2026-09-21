@@ -1,0 +1,362 @@
+<header>
+  <nav class="navbar navbar-expand-lg municipal-navbar" aria-label="Navegación principal">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/" (click)="cerrarMenu()">
+        <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+        <span>Municipalidad <strong>de Colbún</strong></span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-label="Abrir menú principal"
+        [attr.aria-expanded]="menuAbierto"
+        (click)="toggleMenu()"
+      >
+        <i
+          class="bi"
+          [class.bi-list]="!menuAbierto"
+          [class.bi-x-lg]="menuAbierto"
+          aria-hidden="true"
+        ></i>
+      </button>
+      <div class="navbar-collapse" [class.show]="menuAbierto">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              #rlaInicio="routerLinkActive"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaInicio.isActive ? 'page' : null"
+              >Inicio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/municipalidad"
+              routerLinkActive="active"
+              #rlaMuni="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaMuni.isActive ? 'page' : null"
+              >Municipalidad</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/servicios"
+              routerLinkActive="active"
+              #rlaServicios="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaServicios.isActive ? 'page' : null"
+              >Servicios y trámites</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/noticias"
+              routerLinkActive="active"
+              #rlaNoticias="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaNoticias.isActive ? 'page' : null"
+              >Noticias</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/turismo"
+              routerLinkActive="active"
+              #rlaTurismo="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaTurismo.isActive ? 'page' : null"
+              >Turismo y cultura</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/contacto"
+              routerLinkActive="active"
+              #rlaContacto="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaContacto.isActive ? 'page' : null"
+              >Contacto</a
+            >
+          </li>
+          <li class="nav-item ms-lg-2">
+            <a
+              class="btn btn-primary nav-highlight"
+              routerLink="/servicios"
+              (click)="cerrarMenu()"
+              ><i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="contact-hero" aria-labelledby="turismo-title">
+    <div class="container">
+      <span class="eyebrow">Turismo y Cultura</span>
+      <h1 id="turismo-title">Turismo y Cultura de Colbún</h1>
+      <p>Descubre nuestro patrimonio natural y cultural, panoramas, rutas y eventos comunales.</p>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="actividades-title">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="eyebrow">Qué hacer en Colbún</span>
+        <h2 id="actividades-title">Experiencias y actividades</h2>
+        <p>
+          Descubre recorridos, expresiones culturales y propuestas para disfrutar el patrimonio de la
+          comuna en cada temporada.
+        </p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-signpost-split" aria-hidden="true"></i></span>
+            <div>
+              <h3>Rutas de trekking</h3>
+              <p>
+                Senderos con miradores, bosque nativo y paisajes de lagos y montaña para recorrer en
+                familia o en grupos.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-palette" aria-hidden="true"></i></span>
+            <div>
+              <h3>Muestras de esculturas</h3>
+              <p>
+                Obras de arte al aire libre y exposiciones comunitarias que celebran la creatividad y la
+                identidad local.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-music-note-beamed" aria-hidden="true"></i></span>
+            <div>
+              <h3>Sesiones de música en vivo</h3>
+              <p>
+                Presentaciones acústicas, folk y música regional en espacios públicos y encuentros de la
+                comunidad.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-broadcast" aria-hidden="true"></i></span>
+            <div>
+              <h3>Teatro al aire libre</h3>
+              <p>
+                Funciones de teatro y arte escénico bajo el cielo abierto, con propuestas para todas las
+                edades.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-basket3" aria-hidden="true"></i></span>
+            <div>
+              <h3>Ruta de la fruta de Colbún</h3>
+              <p>
+                Un recorrido por huertos, productores locales y mercados donde se celebra la diversidad de
+                la fruta y la agricultura comunal.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="contact-info-item h-100">
+            <span class="info-icon"><i class="bi bi-tree" aria-hidden="true"></i></span>
+            <div>
+              <h3>Miradores y paisajes</h3>
+              <p>
+                Lugares emblemáticos para observar la cordillera, el lago y el valle, ideales para fotos y
+                contemplación.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-content section-space">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-lg-5">
+          <span class="eyebrow">Dirección municipal</span>
+          <h2>Oficina de Turismo y Cultura</h2>
+          <p class="intro">
+            Esta es una página demostrativa orientada al área de <strong>Turismo y Cultura</strong>
+            de la Ilustre Municipalidad de Colbún. La información podrá ser reemplazada por los
+            datos oficiales posteriormente.
+          </p>
+          <div class="contact-info-list">
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>
+              <div>
+                <h3>Ubicación</h3>
+                <p>Oficina de Turismo y Cultura<br />Avenida Adolfo Novoa #419, Colbún</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-telephone" aria-hidden="true"></i></span>
+              <div>
+                <h3>Contacto telefónico</h3>
+                <p>732 561100 (Mesa Municipal)</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-envelope" aria-hidden="true"></i></span>
+              <div>
+                <h3>Correo del área</h3>
+                <p><a href="mailto:turismo.cultura@municipalidadcolbun.cl">turismo.cultura&#64;municipalidadcolbun.cl</a></p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-clock" aria-hidden="true"></i></span>
+              <div>
+                <h3>Horario de atención</h3>
+                <p>Lunes a viernes, 08:00 a 18:00 horas</p>
+              </div>
+            </article>
+            <article class="contact-info-item">
+              <span class="info-icon"><i class="bi bi-facebook" aria-hidden="true"></i></span>
+              <div>
+                <h3>Redes sociales</h3>
+                <p>Turismo y Cultura Colbún</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="contact-card">
+            <div class="contact-card-heading">
+              <h2>Solicita información o agenda actividades</h2>
+              <p>
+                Completa el formulario para recibir información turística, difundir actividades o
+                coordinar visitas. Es una demostración frontend y no envía datos a Internet.
+              </p>
+            </div>
+            <form #contactForm="ngForm" (ngSubmit)="enviarFormulario(contactForm)" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="nombre">Nombre completo *</label>
+                  <input
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    class="form-control"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="correo">Correo electrónico *</label>
+                  <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    class="form-control"
+                    required
+                    email
+                    ngModel
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="telefono">Teléfono</label>
+                  <input
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    class="form-control"
+                    inputmode="numeric"
+                    pattern="9[0-9]{8}"
+                    minlength="9"
+                    maxlength="9"
+                    placeholder="912345678"
+                    aria-describedby="telefono-ayuda"
+                    ngModel
+                  />
+                  <small id="telefono-ayuda" class="field-help"
+                    >Formato: 9 y 8 números más, sin espacios ni símbolos.</small
+                  >
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="asunto">Interés / Asunto *</label>
+                  <input
+                    id="asunto"
+                    name="asunto"
+                    type="text"
+                    class="form-control"
+                    required
+                    ngModel
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="mensaje">Detalle de la consulta *</label>
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    class="form-control"
+                    rows="5"
+                    required
+                    ngModel
+                  ></textarea>
+                </div>
+              </div>
+              @if (errorFormulario) {
+                <p class="form-message error" role="alert">{{ errorFormulario }}</p>
+              }
+              @if (mensajeEnviado) {
+                <p class="form-message success" role="status">
+                  ¡Gracias! Tu solicitud fue registrada correctamente.
+                </p>
+              }
+              <button class="btn btn-primary submit-button" type="submit">
+                Enviar solicitud <i class="bi bi-send ms-2" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <a class="footer-brand" routerLink="/"
+        ><span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
+        Municipalidad de Colbún</a
+      >
+      <p>Un espacio digital para acercar la información municipal a nuestra comunidad.</p>
+      <a class="footer-home-link" routerLink="/"
+        ><i class="bi bi-arrow-left me-2" aria-hidden="true"></i>Volver a la Home</a
+      >
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span>
+      <span>Contenido demostrativo para desarrollo académico.</span>
+    </div>
+  </div>
+</footer>
