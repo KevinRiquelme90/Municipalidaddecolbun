@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import municipalidadData from './data/municipalidad.json';
 
 interface Noticia {
@@ -14,7 +14,7 @@ interface Noticia {
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './pages/home.html',
   styleUrl: './css/home.css',
 })

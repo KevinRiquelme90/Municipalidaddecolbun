@@ -265,8 +265,14 @@
                     type="text"
                     class="form-control"
                     required
+                    minlength="2"
                     ngModel
+                    [attr.aria-invalid]="fieldErrors.nombre ? 'true' : 'false'"
+                    [attr.aria-describedby]="fieldErrors.nombre ? 'turismo-nombre-error' : null"
                   />
+                  @if (fieldErrors.nombre) {
+                    <small id="turismo-nombre-error" class="field-error" role="alert">{{ fieldErrors.nombre }}</small>
+                  }
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="correo">Correo electrónico *</label>
@@ -278,7 +284,12 @@
                     required
                     email
                     ngModel
+                    [attr.aria-invalid]="fieldErrors.correo ? 'true' : 'false'"
+                    [attr.aria-describedby]="fieldErrors.correo ? 'turismo-correo-error' : null"
                   />
+                  @if (fieldErrors.correo) {
+                    <small id="turismo-correo-error" class="field-error" role="alert">{{ fieldErrors.correo }}</small>
+                  }
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="telefono">Teléfono</label>
@@ -294,10 +305,13 @@
                     placeholder="912345678"
                     aria-describedby="telefono-ayuda"
                     ngModel
+                    [attr.aria-invalid]="fieldErrors.telefono ? 'true' : 'false'"
+                    [attr.aria-describedby]="fieldErrors.telefono ? 'turismo-telefono-error telefono-ayuda' : 'telefono-ayuda'"
                   />
-                  <small id="telefono-ayuda" class="field-help"
-                    >Formato: 9 y 8 números más, sin espacios ni símbolos.</small
-                  >
+                  <small id="telefono-ayuda" class="field-help">Formato: 9 y 8 números más, sin espacios ni símbolos.</small>
+                  @if (fieldErrors.telefono) {
+                    <small id="turismo-telefono-error" class="field-error" role="alert">{{ fieldErrors.telefono }}</small>
+                  }
                 </div>
                 <div class="col-12 col-md-6">
                   <label for="asunto">Interés / Asunto *</label>
@@ -307,8 +321,14 @@
                     type="text"
                     class="form-control"
                     required
+                    minlength="5"
                     ngModel
+                    [attr.aria-invalid]="fieldErrors.asunto ? 'true' : 'false'"
+                    [attr.aria-describedby]="fieldErrors.asunto ? 'turismo-asunto-error' : null"
                   />
+                  @if (fieldErrors.asunto) {
+                    <small id="turismo-asunto-error" class="field-error" role="alert">{{ fieldErrors.asunto }}</small>
+                  }
                 </div>
                 <div class="col-12">
                   <label for="mensaje">Detalle de la consulta *</label>
@@ -318,20 +338,27 @@
                     class="form-control"
                     rows="5"
                     required
+                    minlength="20"
                     ngModel
+                    [attr.aria-invalid]="fieldErrors.mensaje ? 'true' : 'false'"
+                    [attr.aria-describedby]="fieldErrors.mensaje ? 'turismo-mensaje-error' : null"
                   ></textarea>
+                  @if (fieldErrors.mensaje) {
+                    <small id="turismo-mensaje-error" class="field-error" role="alert">{{ fieldErrors.mensaje }}</small>
+                  }
                 </div>
               </div>
               @if (errorFormulario) {
-                <p class="form-message error" role="alert">{{ errorFormulario }}</p>
+                <p class="form-message error" role="alert" aria-live="assertive">{{ errorFormulario }}</p>
               }
               @if (mensajeEnviado) {
-                <p class="form-message success" role="status">
+                <p class="form-message success" role="status" aria-live="polite">
                   ¡Gracias! Tu solicitud fue registrada correctamente.
                 </p>
               }
-              <button class="btn btn-primary submit-button" type="submit">
-                Enviar solicitud <i class="bi bi-send ms-2" aria-hidden="true"></i>
+              <button class="btn btn-primary submit-button" type="submit" [disabled]="isSubmitting">
+                {{ isSubmitting ? 'Enviando...' : 'Enviar solicitud' }}
+                <i class="bi bi-send ms-2" aria-hidden="true"></i>
               </button>
             </form>
           </div>

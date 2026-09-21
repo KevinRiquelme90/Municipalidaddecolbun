@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 interface ErrorFormularioContacto {
   nombre: string;
@@ -12,7 +12,7 @@ interface ErrorFormularioContacto {
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './pages/contact.html',
   styleUrl: './css/contact.css',
 })

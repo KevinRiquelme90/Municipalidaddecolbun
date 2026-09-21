@@ -22,22 +22,71 @@
       <div class="navbar-collapse" [class.show]="menuAbierto">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/" (click)="cerrarMenu()">Inicio</a>
+            <a
+              class="nav-link"
+              routerLink="/"
+              routerLinkActive="active"
+              #rlaInicio="routerLinkActive"
+              [routerLinkActiveOptions]="{ exact: true }"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaInicio.isActive ? 'page' : null"
+              >Inicio</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/municipalidad" (click)="cerrarMenu()">Municipalidad</a>
+            <a
+              class="nav-link"
+              routerLink="/municipalidad"
+              routerLinkActive="active"
+              #rlaMunicipalidad="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaMunicipalidad.isActive ? 'page' : null"
+              >Municipalidad</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/tramites" (click)="cerrarMenu()">Servicios y trámites</a>
+            <a
+              class="nav-link"
+              routerLink="/tramites"
+              routerLinkActive="active"
+              #rlaTramites="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaTramites.isActive ? 'page' : null"
+              >Servicios y trámites</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/noticias" (click)="cerrarMenu()">Noticias</a>
+            <a
+              class="nav-link"
+              routerLink="/noticias"
+              routerLinkActive="active"
+              #rlaNoticias="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaNoticias.isActive ? 'page' : null"
+              >Noticias</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/turismo" (click)="cerrarMenu()">Turismo y cultura</a>
+            <a
+              class="nav-link"
+              routerLink="/turismo"
+              routerLinkActive="active"
+              #rlaTurismo="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaTurismo.isActive ? 'page' : null"
+              >Turismo y cultura</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/contacto" (click)="cerrarMenu()">Contacto</a>
+            <a
+              class="nav-link"
+              routerLink="/contacto"
+              routerLinkActive="active"
+              #rlaContacto="routerLinkActive"
+              (click)="cerrarMenu()"
+              [attr.aria-current]="rlaContacto.isActive ? 'page' : null"
+              >Contacto</a
+            >
           </li>
           <li class="nav-item ms-lg-2">
             <a class="btn btn-primary nav-highlight" routerLink="/tramites" (click)="cerrarMenu()"
