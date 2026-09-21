@@ -19,18 +19,33 @@ html {
 body {
   margin: 0;
   background: var(--color-white);
+  color: var(--color-text);
   font-family: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  display: block;
 }
 button,
 a,
-input {
+input,
+textarea {
   font: inherit;
+}
+a {
+  transition: color 0.2s ease;
 }
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
   outline: 3px solid #9bd3aa;
   outline-offset: 3px;
+}
+.btn {
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
 }
 .btn-primary {
   --bs-btn-bg: var(--color-primary);

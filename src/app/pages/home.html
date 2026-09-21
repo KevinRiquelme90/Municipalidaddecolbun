@@ -108,7 +108,7 @@
             <div class="card-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
             <h3>Turismo</h3>
             <p>Descubre los atractivos naturales y culturales de Colbún.</p>
-            <a href="/turismo" class="card-link"
+            <a routerLink="/turismo" class="card-link"
               >Descubrir <i class="bi bi-arrow-right" aria-hidden="true"></i
             ></a>
           </article>
@@ -134,7 +134,7 @@
         <div>
           <span class="eyebrow">Actualidad</span>
           <h2 id="news-title">Noticias destacadas</h2>
-          <p>Contenido demostrativo para la futura sección de noticias.</p>
+          <p>Actualidad, actividades y noticias de la comunidad.</p>
         </div>
         <a routerLink="/noticias" class="text-link"
           >Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i
@@ -183,7 +183,7 @@
           </p>
           <p>
             Colbún invita a descubrir sus paisajes, sus tradiciones y la calidez de sus comunidades.
-            Esta sección presentará próximamente información turística y cultural de la comuna.
+            Aquí encontrarás un vistazo a la identidad, la naturaleza y la vida cultural de la comuna.
           </p>
           <a class="btn btn-primary mt-3" routerLink="/turismo"
             >Descubrir Colbún <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
@@ -269,16 +269,20 @@
               class="form-control"
               [(ngModel)]="correo"
               required
+              minlength="5"
               placeholder="tu correo@email.com"
               [attr.aria-invalid]="!!errorCorreo"
+              [attr.aria-describedby]="errorCorreo ? 'home-correo-error' : mensajeExito ? 'home-correo-success' : null"
             />
-            <button class="btn btn-primary" type="submit">Registrar correo</button>
+            <button class="btn btn-primary" type="submit" [disabled]="isSubmittingCorreo">
+              {{ isSubmittingCorreo ? 'Registrando...' : 'Registrar correo' }}
+            </button>
           </div>
           @if (errorCorreo) {
-            <p class="form-message error" role="alert">{{ errorCorreo }}</p>
+            <p id="home-correo-error" class="form-message error" role="alert" aria-live="assertive">{{ errorCorreo }}</p>
           }
           @if (mensajeExito) {
-            <p class="form-message success" role="status">{{ mensajeExito }}</p>
+            <p id="home-correo-success" class="form-message success" role="status" aria-live="polite">{{ mensajeExito }}</p>
           }
         </form>
       </div>
@@ -326,7 +330,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Municipalidad de Colbún. Todos los derechos reservados.</span>
-      <span>Contenido demostrativo para desarrollo académico.</span>
+      <span>Todos los derechos reservados.</span>
     </div>
   </div>
 </footer>

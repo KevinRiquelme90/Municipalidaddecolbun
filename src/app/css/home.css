@@ -290,6 +290,11 @@
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.info-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(15, 64, 37, 0.08);
 }
 .info-item > i {
   color: var(--color-primary);
@@ -332,9 +337,17 @@
 .subscribe-form .form-control {
   min-height: 48px;
 }
+.subscribe-form .form-control[aria-invalid='true'] {
+  border-color: #ffc8c8;
+  box-shadow: 0 0 0 0.2rem rgba(255, 200, 200, 0.2);
+}
 .subscribe-form .btn {
   min-height: 48px;
   white-space: nowrap;
+}
+.subscribe-form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 .form-message {
   font-size: 0.9rem;
@@ -444,6 +457,9 @@
   .input-group .btn {
     margin-top: 0.65rem;
   }
+  .site-footer {
+    padding-top: 3rem;
+  }
 }
 @media (max-width: 575.98px) {
   .navbar-brand {
@@ -468,5 +484,11 @@
   .footer-bottom span {
     display: block;
     margin-bottom: 0.4rem;
+  }
+  .quick-card,
+  .news-card,
+  .contact-card,
+  .contact-info-item {
+    border-radius: 14px;
   }
 }

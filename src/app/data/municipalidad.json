@@ -2,26 +2,26 @@
   "noticias": [
     {
       "id": 1,
-      "titulo": "Actividad comunitaria",
+      "titulo": "Reapertura del paseo comunitario",
       "categoria": "Comunidad",
-      "fecha": "Contenido demostrativo",
-      "descripcion": "Noticia de ejemplo para mostrar la presentación de información municipal.",
+      "fecha": "18 de septiembre",
+      "descripcion": "Vecinos y vecinas celebraron la reapertura del paseo comunitario con actividades recreativas y espacios verdes renovados.",
       "imagen": "assets/images/noticia-1.svg"
     },
     {
       "id": 2,
-      "titulo": "Agenda de actividades",
+      "titulo": "Agenda cultural de la comuna",
       "categoria": "Actividades",
-      "fecha": "Contenido demostrativo",
-      "descripcion": "Información de ejemplo para la futura agenda de la comuna.",
+      "fecha": "11 de septiembre",
+      "descripcion": "La agenda municipal reúne actividades musicales, talleres y encuentros para fortalecer la participación vecinal.",
       "imagen": "assets/images/noticia-2.svg"
     },
     {
       "id": 3,
-      "titulo": "Espacios para la comunidad",
+      "titulo": "Nuevas iniciativas de apoyo vecinal",
       "categoria": "Municipalidad",
-      "fecha": "Contenido demostrativo",
-      "descripcion": "Contenido de ejemplo para comunicar novedades a vecinos y vecinas.",
+      "fecha": "3 de septiembre",
+      "descripcion": "La Municipalidad reforzó programas de apoyo, atención ciudadana y coordinación con organizaciones locales.",
       "imagen": "assets/images/noticia-3.svg"
     }
   ]
