@@ -8,7 +8,7 @@
       <button
         class="navbar-toggler"
         type="button"
-        aria-label="Abrir menú principal"
+        [attr.aria-label]="menuAbierto ? 'Cerrar menú principal' : 'Abrir menú principal'"
         [attr.aria-expanded]="menuAbierto"
         (click)="toggleMenu()"
       >
@@ -303,7 +303,6 @@
                     minlength="9"
                     maxlength="9"
                     placeholder="912345678"
-                    aria-describedby="telefono-ayuda"
                     ngModel
                     [attr.aria-invalid]="fieldErrors.telefono ? 'true' : 'false'"
                     [attr.aria-describedby]="fieldErrors.telefono ? 'turismo-telefono-error telefono-ayuda' : 'telefono-ayuda'"

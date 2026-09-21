@@ -9,7 +9,7 @@
       <button
         class="navbar-toggler"
         type="button"
-        aria-label="Abrir menú principal"
+        [attr.aria-label]="menuAbierto ? 'Cerrar menú principal' : 'Abrir menú principal'"
         [attr.aria-expanded]="menuAbierto"
         (click)="toggleMenu()"
       >

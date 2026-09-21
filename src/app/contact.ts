@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
-interface ErrorFormularioContacto {
-  nombre: string;
-  correo: string;
-  telefono: string;
-  asunto: string;
-  mensaje: string;
-}
+import {
+  crearErroresFormulario,
+  validarFormulario,
+  type ErrorFormulario,
+} from './shared/form-validation';
 
 @Component({
   selector: 'app-contact',
@@ -21,16 +18,7 @@ export class Contact {
   mensajeEnviado = false;
   errorFormulario = '';
   isSubmitting = false;
-  fieldErrors: ErrorFormularioContacto = {
-    nombre: '',
-    correo: '',
-    telefono: '',
-    asunto: '',
-    mensaje: '',
-  };
-
-  readonly emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  readonly chileanPhonePattern = /^9\d{8}$/;
+  fieldErrors: ErrorFormulario = crearErroresFormulario();
 
   toggleMenu(): void {
     this.menuAbierto = !this.menuAbierto;
@@ -41,62 +29,7 @@ export class Contact {
   }
 
   private limpiarErroresCampos(): void {
-    this.fieldErrors = {
-      nombre: '',
-      correo: '',
-      telefono: '',
-      asunto: '',
-      mensaje: '',
-    };
-  }
-
-  private validarCampo(formulario: NgForm, nombreCampo: keyof ErrorFormularioContacto): string {
-    const valor = String(formulario.value[nombreCampo] ?? '').trim();
-
-    switch (nombreCampo) {
-      case 'nombre':
-        if (!valor) return 'El nombre completo es obligatorio.';
-        if (valor.length < 2) return 'El nombre debe tener al menos 2 caracteres.';
-        return '';
-      case 'correo':
-        if (!valor) return 'El correo electrónico es obligatorio.';
-        if (!this.emailPattern.test(valor)) return 'Ingresa un correo electrónico válido.';
-        return '';
-      case 'telefono':
-        if (!valor) return '';
-        if (!this.chileanPhonePattern.test(valor)) {
-          return 'El teléfono debe tener 9 dígitos y comenzar con 9. Ejemplo: 912345678.';
-        }
-        return '';
-      case 'asunto':
-        if (!valor) return 'El asunto es obligatorio.';
-        if (valor.length < 5) return 'El asunto debe tener al menos 5 caracteres.';
-        return '';
-      case 'mensaje':
-        if (!valor) return 'El mensaje es obligatorio.';
-        if (valor.length < 20) return 'El mensaje debe tener al menos 20 caracteres.';
-        return '';
-      default:
-        return '';
-    }
-  }
-
-  private validarFormulario(formulario: NgForm): boolean {
-    this.limpiarErroresCampos();
-
-    const campos: (keyof ErrorFormularioContacto)[] = ['nombre', 'correo', 'telefono', 'asunto', 'mensaje'];
-    let formularioValido = true;
-
-    campos.forEach((campo) => {
-      const error = this.validarCampo(formulario, campo);
-      this.fieldErrors[campo] = error;
-      if (error) {
-        formularioValido = false;
-      }
-    });
-
-    this.errorFormulario = formularioValido ? '' : 'Completa correctamente los campos obligatorios.';
-    return formularioValido;
+    this.fieldErrors = crearErroresFormulario();
   }
 
   enviarFormulario(formulario: NgForm): void {
@@ -104,7 +37,10 @@ export class Contact {
     this.mensajeEnviado = false;
     this.isSubmitting = true;
 
-    const formularioValido = this.validarFormulario(formulario);
+    const resultado = validarFormulario(formulario);
+    this.fieldErrors = resultado.errores;
+    const formularioValido = resultado.valido;
+    this.errorFormulario = formularioValido ? '' : 'Completa correctamente los campos obligatorios.';
 
     if (!formularioValido) {
       this.isSubmitting = false;

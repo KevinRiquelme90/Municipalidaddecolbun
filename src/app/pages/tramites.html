@@ -5,7 +5,7 @@
         <span class="brand-mark"><i class="bi bi-tree-fill" aria-hidden="true"></i></span>
         <span>Municipalidad <strong>de Colbún</strong></span>
       </a>
-      <button class="navbar-toggler" type="button" aria-label="Abrir menú principal" [attr.aria-expanded]="menuAbierto" (click)="toggleMenu()">
+      <button class="navbar-toggler" type="button" [attr.aria-label]="menuAbierto ? 'Cerrar menú principal' : 'Abrir menú principal'" [attr.aria-expanded]="menuAbierto" (click)="toggleMenu()">
         <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true"></i>
       </button>
       <div class="navbar-collapse" [class.show]="menuAbierto">
