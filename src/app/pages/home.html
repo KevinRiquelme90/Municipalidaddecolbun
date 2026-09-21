@@ -106,7 +106,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <img
       class="hero-img"
-      src="assets/images/hero-colbun.svg"
+      src="assets/images/hero-colbun.jpg"
       alt="Paisaje natural representativo de Colbún"
     />
     <div class="hero-overlay"></div>
@@ -193,7 +193,7 @@
         @for (noticia of noticias; track noticia.id) {
           <div class="col-12 col-md-4">
             <article class="news-card">
-              <img [src]="noticia.imagen" [alt]="noticia.titulo" />
+              <img [src]="noticia.imagen" [alt]="noticia.imagenAlt" />
               <div class="news-body">
                 <div class="news-meta">
                   <span>{{ noticia.categoria }}</span
@@ -218,7 +218,7 @@
       <div class="row align-items-center g-5">
         <div class="col-12 col-lg-6">
           <div class="about-image">
-            <img src="assets/images/colbun.svg" alt="Entorno natural de Colbún" />
+            <img src="assets/images/colbun.jpg" alt="Lago Colbún y paisaje cordillerano de la Región del Maule" />
             <span class="about-badge"
               ><i class="bi bi-heart-fill me-2" aria-hidden="true"></i> Nuestra comunidad</span
             >

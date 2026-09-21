@@ -10,6 +10,7 @@ interface Noticia {
   fecha: string;
   descripcion: string;
   imagen: string;
+  imagenAlt: string;
 }
 
 @Component({

@@ -6,7 +6,8 @@
       "categoria": "Comunidad",
       "fecha": "18 de septiembre",
       "descripcion": "Vecinos y vecinas celebraron la reapertura del paseo comunitario con actividades recreativas y espacios verdes renovados.",
-      "imagen": "assets/images/noticia-1.svg"
+      "imagen": "assets/images/noticia-1.jpg",
+      "imagenAlt": "Edificio y entorno urbano de Colbún, en la Región del Maule"
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "categoria": "Actividades",
       "fecha": "11 de septiembre",
       "descripcion": "La agenda municipal reúne actividades musicales, talleres y encuentros para fortalecer la participación vecinal.",
-      "imagen": "assets/images/noticia-2.svg"
+      "imagen": "assets/images/noticia-2.jpg",
+      "imagenAlt": "Artesanía y señalética turística de Rari, en la Región del Maule"
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "categoria": "Municipalidad",
       "fecha": "3 de septiembre",
       "descripcion": "La Municipalidad reforzó programas de apoyo, atención ciudadana y coordinación con organizaciones locales.",
-      "imagen": "assets/images/noticia-3.svg"
+      "imagen": "assets/images/noticia-3.jpg",
+      "imagenAlt": "Paisaje del Embalse Machicura, en la comuna de Colbún"
     }
   ]
 }
