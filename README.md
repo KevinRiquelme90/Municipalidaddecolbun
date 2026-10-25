@@ -186,14 +186,4 @@ Las capturas de la aplicación están en `docs/screenshots/`:
 - No se implementa backend ni pasarela bancaria real; el pago es simulado.
 - No se incluye una captura del comprobante; el pago y el acceso al comprobante se validaron durante las pruebas del flujo.
 
-## Entrega y empaquetado
 
-En Windows PowerShell, para generar un ZIP grupal sin dependencias, artefactos de compilación, cachés ni configuración local del agente:
-
-```powershell
-$exclude = @('node_modules', 'dist', '.angular', '.git', 'state', '.vscode', '.mcp.json', 'RiquelmePichuanteRojasES2.zip')
-$items = Get-ChildItem -Force | Where-Object { $_.Name -notin $exclude }
-Compress-Archive -Path $items.FullName -DestinationPath .\RiquelmePichuanteRojasES2.zip -Force
-```
-
-El nombre de grupo usa los apellidos del informe de ES1 (Riquelme, Pichuante y Rojas). El archivo conserva la estructura Angular, las pruebas, las capturas y el README para ejecutarse en otra máquina con `npm install` y `npm start`.
