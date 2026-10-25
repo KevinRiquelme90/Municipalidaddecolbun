@@ -91,8 +91,8 @@
             >
           </li>
           <li class="nav-item ms-lg-2">
-            <a class="btn btn-primary nav-highlight" routerLink="/tramites" (click)="cerrarMenu()">
-              <i class="bi bi-file-earmark-text me-1" aria-hidden="true"></i> Trámites
+            <a class="btn btn-primary nav-highlight" routerLink="/permiso-circulacion" (click)="cerrarMenu()">
+              <i class="bi bi-car-front me-1" aria-hidden="true"></i> Permisos de circulación
             </a>
           </li>
         </ul>
@@ -115,9 +115,9 @@
       <h1 id="hero-title">Bienvenidos a <span>Colbún</span></h1>
       <p>Información, servicios y actividades para nuestra comunidad.</p>
       <div class="hero-actions d-flex flex-wrap gap-3">
-        <a class="btn btn-primary btn-lg" routerLink="/tramites"
-          >Ver trámites <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
-        ></a>
+        <a class="btn btn-outline-light btn-lg" routerLink="/permiso-circulacion"
+          >Permisos de circulación</a
+        >
         <a class="btn btn-outline-light btn-lg" routerLink="/turismo">Conocer Colbún</a>
       </div>
     </div>
@@ -139,6 +139,16 @@
             <p>Encuentra información sobre servicios y trámites municipales.</p>
             <a routerLink="/tramites" class="card-link"
               >Ver trámites <i class="bi bi-arrow-right" aria-hidden="true"></i
+            ></a>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="quick-card">
+            <div class="card-icon"><i class="bi bi-car-front" aria-hidden="true"></i></div>
+            <h3>Permiso de circulación</h3>
+            <p>Consulta antecedentes, paga simuladamente y revisa comprobantes del trámite.</p>
+            <a routerLink="/permiso-circulacion" class="card-link"
+              >Consultar <i class="bi bi-arrow-right" aria-hidden="true"></i
             ></a>
           </article>
         </div>

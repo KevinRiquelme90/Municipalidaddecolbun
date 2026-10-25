@@ -1,0 +1,63 @@
+<section class="permit-shell">
+  <div class="permit-hero">
+    <div class="container">
+      <span class="section-kicker">Comprobante</span>
+      <h1>Pago confirmado</h1>
+      <p>El comprobante se ha generado correctamente y queda registrado en el historial.</p>
+    </div>
+  </div>
+
+  <div class="container permit-section">
+    <div class="page-top">
+      <a routerLink="/permiso-circulacion" class="link-back">← Nueva consulta</a>
+      <a routerLink="/permiso-historial" class="link-back">Historial</a>
+    </div>
+
+    <div class="permit-card receipt-wrap">
+      @if (error) {
+        <p class="form-message error">{{ error }}</p>
+      } @else if (transaccion) {
+        <div class="receipt-header">
+          <h2>Comprobante de pago</h2>
+          <span class="status-badge status-pagado">Pagado</span>
+        </div>
+
+        <div class="receipt-grid">
+          <div class="receipt-item">
+            <span>Identificador</span>
+            <strong>{{ transaccion.id }}</strong>
+          </div>
+          <div class="receipt-item">
+            <span>Fecha</span>
+            <strong>{{ fechaFormateada }}</strong>
+          </div>
+          <div class="receipt-item">
+            <span>Patente</span>
+            <strong>{{ transaccion.patente }}</strong>
+          </div>
+          <div class="receipt-item">
+            <span>Municipalidad</span>
+            <strong>{{ transaccion.municipio }}</strong>
+          </div>
+          <div class="receipt-item">
+            <span>Monto</span>
+            <strong>{{ montoFormateado }}</strong>
+          </div>
+          <div class="receipt-item">
+            <span>Estado</span>
+            <strong>{{ transaccion.estado }}</strong>
+          </div>
+        </div>
+
+        <div class="note-box">
+          Este comprobante es una evidencia de la operación simulada y queda registrado en la consulta del historial de pagos.
+        </div>
+
+        <div class="action-row">
+          <a class="btn btn-primary" routerLink="/permiso-historial">Ver historial</a>
+          <a class="btn btn-outline-secondary" [routerLink]="['/permiso-detalle', transaccion.patente]">Volver al detalle</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -53,3 +53,9 @@ textarea:focus-visible {
   --bs-btn-hover-bg: var(--color-primary-dark);
   --bs-btn-hover-border-color: var(--color-primary-dark);
 }
+
+@media (max-width: 575.98px) {
+  .row.g-5 {
+    --bs-gutter-x: 1.5rem;
+  }
+}

@@ -1,0 +1,117 @@
+<section class="permit-shell">
+  <div class="permit-hero">
+    <div class="container">
+      <span class="section-kicker">Antecedentes</span>
+      <h1>Permiso de circulación {{ patente }}</h1>
+      <p>Consulta el estado del permiso, antecedentes y la opción de pago asociada.</p>
+    </div>
+  </div>
+
+  <div class="container permit-section">
+    <div class="page-top">
+      <a routerLink="/permiso-circulacion" class="link-back">← Volver a búsqueda</a>
+      <a routerLink="/permiso-historial" class="link-back">Historial de pagos</a>
+    </div>
+
+    @if (error) {
+      <div class="permit-card">
+        <p class="form-message error" role="alert">{{ error }}</p>
+        <div class="action-row">
+          <a class="btn btn-primary" routerLink="/permiso-circulacion">Volver a búsqueda</a>
+        </div>
+      </div>
+    } @else if (!patente) {
+      <div class="permit-card">
+        <p class="form-message error">No se ha indicado una patente válida.</p>
+      </div>
+    } @else {
+      <div class="permit-card">
+        <div class="status-badge" [class]="statusClass">
+          {{ status === 'pendiente' ? 'Pendiente' : status === 'pagado' ? 'Pagado' : status === 'incompleto' ? 'Datos incompletos' : 'No encontrado' }}
+        </div>
+
+        <h2>Resultado de la consulta</h2>
+
+        @if (status === 'not_found') {
+          <p class="form-message error">{{ mensaje }}</p>
+          <div class="note-box">
+            La Municipalidad puede registrar otras patentes o requerir una revisión documental si la información aún no está cargada en el sistema.
+          </div>
+          <div class="action-row">
+            <a class="btn btn-primary" routerLink="/permiso-circulacion">Consultar otra patente</a>
+          </div>
+        } @else if (status === 'incompleto') {
+          <p class="form-message error">{{ mensaje }}</p>
+          <div class="detail-grid">
+            <div class="detail-item">
+              <span>Patente</span>
+              <strong>{{ permiso?.patente }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Marca</span>
+              <strong>{{ permiso?.marca }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Modelo</span>
+              <strong>{{ permiso?.modelo }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Municipalidad</span>
+              <strong>{{ permiso?.municipio }}</strong>
+            </div>
+          </div>
+          <div class="note-box">
+            Debe completar la información del titular y antecedentes del vehículo antes de continuar con el pago del permiso.
+          </div>
+        } @else {
+          <div class="detail-grid">
+            <div class="detail-item">
+              <span>Propietario</span>
+              <strong>{{ permiso?.propietario }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Vehículo</span>
+              <strong>{{ permiso?.marca }} {{ permiso?.modelo }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Tipo</span>
+              <strong>{{ permiso?.tipoVehiculo }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Período</span>
+              <strong>{{ permiso?.periodo }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Vencimiento</span>
+              <strong>{{ permiso?.fechaVencimiento }}</strong>
+            </div>
+            <div class="detail-item">
+              <span>Monto</span>
+              <strong class="monto">{{ montoFormato }}</strong>
+            </div>
+          </div>
+
+          <div class="note-box">
+            {{ mensaje }}
+          </div>
+
+          @if (status === 'pendiente') {
+            <div class="action-row">
+              <button class="btn btn-primary" type="button" (click)="iniciarPago()">Pagar permiso</button>
+              <a class="btn btn-outline-secondary" routerLink="/permiso-historial">Ver historial</a>
+            </div>
+          }
+
+          @if (status === 'pagado') {
+            <div class="action-row">
+              @if (ultimaTransaccion) {
+                <a class="btn btn-primary" [routerLink]="['/permiso-comprobante', ultimaTransaccion.id]">Ver comprobante</a>
+              }
+              <a class="btn btn-outline-secondary" routerLink="/permiso-circulacion">Nueva consulta</a>
+            </div>
+          }
+        }
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<section class="permit-shell">
+  <div class="permit-hero">
+    <div class="container">
+      <span class="section-kicker">Pago simulado</span>
+      <h1>Confirmar pago del permiso</h1>
+      <p>Revisa el resumen del permiso y confirma la operación de cobro simulada.</p>
+    </div>
+  </div>
+
+  <div class="container permit-section">
+    <div class="page-top">
+      <a routerLink="/permiso-circulacion" class="link-back">← Volver a búsqueda</a>
+      <a routerLink="/permiso-historial" class="link-back">Historial de pagos</a>
+    </div>
+
+    <div class="permit-card receipt-wrap">
+      <div class="receipt-header">
+        <h2>Resumen del trámite</h2>
+      </div>
+
+      @if (permiso) {
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span>Patente</span>
+            <strong>{{ permiso.patente }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Vehículo</span>
+            <strong>{{ permiso.marca }} {{ permiso.modelo }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Municipalidad</span>
+            <strong>{{ permiso.municipio }}</strong>
+          </div>
+          <div class="summary-item">
+            <span>Valor</span>
+            <strong class="monto">{{ montoFormato }}</strong>
+          </div>
+        </div>
+
+        @if (errorFormulario) {
+          <p class="form-message error" role="alert">{{ errorFormulario }}</p>
+        }
+
+        <div class="action-row">
+          <button class="btn btn-primary" type="button" (click)="confirmarPago()" [disabled]="isSubmitting">
+            {{ isSubmitting ? 'Registrando pago...' : 'Confirmar pago simulado' }}
+          </button>
+          <a class="btn btn-outline-secondary" [routerLink]="['/permiso-detalle', permiso.patente]">
+            Volver al detalle
+          </a>
+        </div>
+      } @else {
+        <p class="form-message error" role="alert">
+          {{ errorFormulario || 'No se encontró un permiso pendiente para este trámite.' }}
+        </p>
+      }
+    </div>
+  </div>
+</section>

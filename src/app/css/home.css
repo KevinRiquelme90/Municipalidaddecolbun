@@ -392,6 +392,11 @@
   font-size: 0.88rem;
   line-height: 1.6;
   margin-bottom: 0.55rem;
+  overflow-wrap: anywhere;
+}
+
+.site-footer a {
+  overflow-wrap: anywhere;
 }
 .site-footer p i {
   color: #9bd3aa;

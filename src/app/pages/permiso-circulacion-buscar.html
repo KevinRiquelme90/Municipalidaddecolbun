@@ -1,0 +1,70 @@
+<section class="permit-shell">
+  <div class="permit-hero">
+    <div class="container">
+      <span class="section-kicker">Municipalidad de Colbún</span>
+      <h1>Consulta de permiso de circulación</h1>
+      <p>
+        Revisa el estado del permiso, identifica pagos pendientes y accede al comprobante asociado.
+      </p>
+    </div>
+  </div>
+
+  <div class="container permit-section">
+    <div class="page-top">
+      <a routerLink="/" class="link-back">← Volver al inicio</a>
+    </div>
+
+    <div class="permit-card search-card">
+      <span class="section-kicker">Búsqueda</span>
+      <h2>Buscar patente</h2>
+
+      <form [formGroup]="form" (ngSubmit)="buscar()" novalidate>
+        <div class="form-grid">
+          <div class="field-group">
+            <label for="patente">Patente</label>
+            <input
+              id="patente"
+              type="text"
+              formControlName="patente"
+              [class.invalid]="(form.controls.patente.touched && form.controls.patente.invalid) || !!errorBusqueda"
+              placeholder="Ejemplo: ABCD12"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        @if (form.controls.patente.touched && form.controls.patente.hasError('required')) {
+          <p class="form-message error">La patente es obligatoria.</p>
+        }
+
+        @if (form.controls.patente.touched && form.controls.patente.hasError('pattern')) {
+          <p class="form-message error">Ingresa una patente válida con letras y números.</p>
+        }
+
+        @if (errorBusqueda) {
+          <p class="form-message" [class.error]="tipoMensaje === 'error'" [class.success]="tipoMensaje === 'success'">
+            {{ errorBusqueda }}
+          </p>
+        }
+
+        <div class="action-row">
+          <button class="btn btn-primary" type="submit" [disabled]="isLoading">
+            {{ isLoading ? 'Consultando...' : 'Consultar patente' }}
+          </button>
+          <button class="btn btn-outline-secondary" type="button" (click)="reiniciarDatos()">
+            Reiniciar datos demo
+          </button>
+        </div>
+      </form>
+
+      <div class="quick-plates">
+        <p>Escenarios de prueba:</p>
+        <div class="chip-group">
+          @for (patente of placasDemo; track patente) {
+            <button type="button" class="chip" (click)="cargarPatente(patente)">{{ patente }}</button>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
